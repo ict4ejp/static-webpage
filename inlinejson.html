@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>inline json</title>
+    </head>
+    <body>
+        <div id="place"></div>
+        <p>check console.log</p>
+        <p>(ref) https://jsprimer.net/basic/json/</p>
+    </body>
+    <script>
+        // JSONはダブルクォートのみを許容するため、シングルクォートでJSON文字列を記述
+        const json = '{ "id": 1, "name": "js-primer" }';
+        console.log(typeof(json));
+        const obj = JSON.parse(json);
+        console.log(typeof(obj));
+        console.log(obj.id); // => 1
+        console.log(obj.name); // => "js-primer"
+    </script>
+</html>
