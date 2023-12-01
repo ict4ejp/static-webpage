@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onclick</title>
+  </head>
+  <body>
+    <p>
+        on click sample
+    </p>
+    <div>
+      <p id="para">Some text here</p>
+      <button onclick="changeColor('blue');">blue</button>
+      <button onclick="changeColor('red');">red</button>
+    </div>
+    <div>
+      <p>your feeling? <span id="textmsg"></span></p>
+      <button onclick="changeMsg('smile');">smile</button>
+      <button onclick="changeMsg('sad');">sad</button>
+    </div>
+  <script>
+    function changeColor(newColor) {
+      let elem = document.getElementById("para");
+      elem.style.color = newColor;
+    }
+
+    function changeMsg(newMsg) {
+      document.getElementById("textmsg").innerHTML = newMsg;
+    }
+  </script>
+  </body>
+</html>

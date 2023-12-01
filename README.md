@@ -11,11 +11,15 @@ sample files for static webpages
 - link.html
 - style.css
 
-## 3rd : with JS Object
+## 3rd : with JS
+
+- onclick.html
+
+## 4th : with JS Object
 
 - pagewithjs.html
 
-## 4th : inline JSON
+## 5th : inline JSON
 
 - inlinejson.html
 
