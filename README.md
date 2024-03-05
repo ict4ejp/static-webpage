@@ -17,10 +17,15 @@ sample files for static webpages
 
 ## 4th : with JS Object
 
-- pagewithjs.html
+- inlinejsobj.html
 
 ## 5th : inline JSON
 
 - inlinejson.html
+
+## 6th : with JSON file
+
+- readjson.html
+- data.json
 
 
