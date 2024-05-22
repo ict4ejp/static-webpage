@@ -28,4 +28,6 @@ sample files for static webpages
 - readjson.html
 - data.json
 
+## 7th : XMLHttpRequest (XHR)
 
+- onclick2xhr.json

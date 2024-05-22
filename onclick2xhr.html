@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>ajaxテスト</title>
+</head>
+<body>
+  <p>ajaxテスト</p>
+  <input id="button-get" type="button" value="テスト(GET通信)">
+  <input id="button-post" type="button" value="テスト(POST通信)">
+
+  <p><span id="textmsg"></span></p>
+  <p><hr/></p>
+  <p>(ref) https://qiita.com/SeiuchiAzarashi/items/2acfed5336730263477b</p>
+  <p>(ref) https://httpbin.org/</p>
+  <script>
+      // テスト(GET通信)ボタンクリック時のイベント
+      document.getElementById("button-get").onclick = function () {
+          // XMLHttpRequestオブジェクトのインスタンスを生成
+          let xhr = new XMLHttpRequest();
+
+          // 通信を監視するイベントハンドラを設定
+          xhr.onreadystatechange = function () {
+              // 通信完了時
+              if (xhr.readyState === 4) {
+                  if (xhr.status === 200) {
+                      // 正常レスポンス
+                      console.log(xhr.response);
+                      changeMsg("Status-Code: 200. Check your console log")
+                  } else {
+                      console.log("通信エラー");
+                      changeMsg("Status: Error")
+                  }
+              }
+          }
+
+          // レスポンスの形式を指定
+          xhr.responseType = "json"
+          // リクエストメソッドとリクエスト先を設定(クエリパラメータで渡したい値を指定)
+          xhr.open("GET", "https://httpbin.org/get?param1=p1&param2=p2");
+          // リクエスト送信
+          xhr.send();
+          changeMsg("Trying to GET request...")
+      };
+
+      // テスト(POST通信)ボタンクリック時のイベント
+      document.getElementById("button-post").onclick = function () {
+          // XMLHttpRequestオブジェクトのインスタンスを生成
+          let xhr = new XMLHttpRequest();
+
+          // 通信を監視するイベントハンドラを設定
+          xhr.onreadystatechange = function () {
+              // 通信完了時
+              if (xhr.readyState === 4) {
+                  if (xhr.status === 200) {
+                      // 正常レスポンス
+                      console.log(xhr.response);
+                      changeMsg("Status-Code: 200. Check your console log")
+                  } else {
+                      console.log("通信エラー");
+                      changeMsg("Status: Error")
+                  }
+              }
+          }
+
+          // レスポンスの形式を指定
+          xhr.responseType = "json";
+          // リクエストメソッドとリクエスト先を設定
+          xhr.open("POST", "http://httpbin.org/post");
+          // HTTPリクエストヘッダを設定
+          xhr.setRequestHeader("content-type", "application/json");
+          // リクエスト送信(渡したい値を引数で指定)
+          xhr.send('{"param1" : "p1", "param2" : "p2"}');
+          changeMsg("Trying to POST request...")
+      };
+
+      function changeMsg(newMsg) {
+        document.getElementById("textmsg").innerHTML = newMsg;
+      };
+  </script>
+</body>
+</html>
