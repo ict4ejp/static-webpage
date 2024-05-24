@@ -16,6 +16,7 @@
   <script>
       // テスト(GET通信)ボタンクリック時のイベント
       document.getElementById("button-get").onclick = function () {
+          changeMsg("Try to GET request")
           // XMLHttpRequestオブジェクトのインスタンスを生成
           let xhr = new XMLHttpRequest();
 
@@ -40,11 +41,11 @@
           xhr.open("GET", "https://httpbin.org/get?param1=p1&param2=p2");
           // リクエスト送信
           xhr.send();
-          changeMsg("Trying to GET request...")
       };
 
       // テスト(POST通信)ボタンクリック時のイベント
       document.getElementById("button-post").onclick = function () {
+          changeMsg("Try to POST request")
           // XMLHttpRequestオブジェクトのインスタンスを生成
           let xhr = new XMLHttpRequest();
 
@@ -71,7 +72,6 @@
           xhr.setRequestHeader("content-type", "application/json");
           // リクエスト送信(渡したい値を引数で指定)
           xhr.send('{"param1" : "p1", "param2" : "p2"}');
-          changeMsg("Trying to POST request...")
       };
 
       function changeMsg(newMsg) {
