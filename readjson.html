@@ -11,7 +11,7 @@
         <p><hr/></p>
     </body>
     <script type="module">
-        import data from "./data.json" assert { type: "json" };
+        import data from "./data.json" with { type: "json" };
         console.log(data);
         console.log(typeof(data));
     </script>
