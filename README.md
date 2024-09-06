@@ -5,6 +5,7 @@ sample files for static webpages
 ## 1st : html page
 
 - index.html
+- check-dom.html
 
 ## 2nd : html & css
 
